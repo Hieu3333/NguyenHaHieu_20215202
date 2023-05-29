@@ -2,8 +2,9 @@ package p;
 import java.util.*;
 public class Store {
 	private int N = 100;
+
 	private ArrayList<Media> itemsInStore = new ArrayList<Media>();
-	
+
 	
 	
 	public void addMedia(Media a) {
