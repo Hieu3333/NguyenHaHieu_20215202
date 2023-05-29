@@ -2,12 +2,14 @@ package p;
 import java.util.*;
 
 public class Book extends Media {
-    public List<String> authors = new ArrayList<String>(); 
+
+    public ArrayList<String> authors = new ArrayList<String>(); 
 	
-	public List<String> getAuthors() {
+	public ArrayList<String> getAuthors() {
 		return authors;
 	}
-	public void setAuthors(List<String> authors) {
+	public void setAuthors(ArrayList<String> authors) {
+
 		this.authors = authors;
 	}
 	
