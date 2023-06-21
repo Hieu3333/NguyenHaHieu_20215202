@@ -2,6 +2,8 @@ package p;
 import java.util.*;
 
 import javax.naming.LimitExceededException;
+
+import hust.soict.globalict.aims.exception.PlayerException;
 public class Aims {
 	
 	private static Scanner input = new Scanner(System.in);
@@ -92,7 +94,7 @@ public class Aims {
 	
 	
 	
-	public static void main(String[] args) throws LimitExceededException {
+	public static void main(String[] args) throws LimitExceededException, PlayerException {
 		Store store = new Store();
 		Cart cart = new Cart();
 		
@@ -128,7 +130,14 @@ public class Aims {
 				mediaDetailsMenu();
 				command = input.nextInt();
 				if (command == 1) { // Add to cart
-					cart.addMedia(store.getMedia(item));
+				
+					try {
+						cart.addMedia(store.getMedia(item));
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
 				}
 				if (command == 2) { //Play
 					store.getMedia(item).play();
@@ -154,7 +163,11 @@ public class Aims {
 				System.out.println("Enter title:");
 				String t = input.nextLine();
 				int item = store.getItemByTitle(t);
+				try {
 				store.getMedia(item).play();
+				}catch (PlayerException e) {
+					e.printStackTrace();
+				}
 				break;
 			}
 			

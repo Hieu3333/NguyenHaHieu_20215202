@@ -1,4 +1,7 @@
 package p;
+
+import hust.soict.globalict.aims.exception.PlayerException;
+
 public abstract class Media {
 	
 	private int id;
@@ -71,10 +74,13 @@ public abstract class Media {
 		Media a = (Media) o;
 		return (this.title == a.title);
 	}
+
+
+	public void play() throws PlayerException {
 	
-	public void play() {
 		
 	}
+	
 	
 	
 	
